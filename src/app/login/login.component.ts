@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
     this.loginService.login("pietra@munif.com.br", "qwe123").then(r => {
       if (r.ok) {
         let purl = this.loginService.proximaUrl ? this.loginService.proximaUrl : "/principal";
-        console.log(purl);
         this.router.navigate([purl]);
       }
       else {

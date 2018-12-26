@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DSServiceService } from '../dsservice.service';
+import { DFResponse } from 'src/app/dfresponse.type';
+import { Evento } from '../evento.type';
 
 @Component({
   selector: 'app-principal',
@@ -11,13 +13,13 @@ import { DSServiceService } from '../dsservice.service';
 
 export class PrincipalComponent implements OnInit {
 
-  lista: any;
+  data: DFResponse<Evento>;
 
   constructor(public service: DSServiceService) { }
 
   ngOnInit() {
     this.service.eventos().then(r => {
-      this.lista = r;
+      this.data = r;
 
     }).catch(e => {
 

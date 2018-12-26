@@ -34,13 +34,7 @@ export class LoginService {
       .toPromise().then(response => {
         let { session_token, session_id, id, name, first_name, last_name, email, is_sys_admin, last_login_date, host }: any = response;
         this.session = { session_token, session_id, id, name, first_name, last_name, email, is_sys_admin, last_login_date, host };
-
-
-        console.log(this.session);
-
-
         this.logado = true;
-
         return { ok: true };
       }).catch(this.errorHandler);
   }

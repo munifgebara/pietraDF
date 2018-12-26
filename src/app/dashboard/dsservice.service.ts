@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { LoginService } from '../login.service';
+import { DFResponse } from '../dfresponse.type';
+import { Evento } from './evento.type';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,10 +18,9 @@ export class DSServiceService {
     return headers;
   }
 
-  eventos() {
-    return this.http.get(`${LoginService.BASE_URL}/pietra/_table/Evento?limit=10`, { headers: this.createAuthorizationHeader() })
+  eventos(): Promise<DFResponse<Evento>> {
+    return this.http.get<DFResponse<Evento>>(`${LoginService.BASE_URL}/pietra/_table/Evento?limit=10&order=quando%20desc&include_count=true`, { headers: this.createAuthorizationHeader() })
       .toPromise().then(response => {
-        console.log(response);
         return response;
       }).catch(this.errorHandler);
   }
