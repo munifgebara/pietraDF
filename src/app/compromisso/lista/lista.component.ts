@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
+import { DFResponse } from 'src/app/dfresponse.type';
+import { Compromisso } from '../compromisso.type';
 
 @Component({
   selector: 'app-lista',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
 
-  constructor() { }
+  protected message = "listando";
+  protected data: DFResponse<Compromisso>;
+
+  constructor(protected service: ServiceService) { }
 
   ngOnInit() {
+    this.service.query().then(r => {
+      this.data = r;
+    })
   }
 
 }

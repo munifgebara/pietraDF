@@ -3,7 +3,7 @@ import { DSServiceService } from '../dsservice.service';
 import { ServiceService } from '../../compromisso/service.service';
 import { DFResponse } from 'src/app/dfresponse.type';
 import { Evento } from '../evento.type';
-import { Compromisso } from 'src/app/compromisso/compromisso.type';
+
 
 @Component({
   selector: 'app-principal',
@@ -17,7 +17,7 @@ export class PrincipalComponent implements OnInit {
 
   data: DFResponse<Evento>;
 
-  constructor(public service: DSServiceService, public s2: ServiceService) { }
+  constructor(public service: DSServiceService) { }
 
   ngOnInit() {
     this.service.eventos().then(r => {
@@ -28,9 +28,5 @@ export class PrincipalComponent implements OnInit {
     });
   }
 
-  insere() {
-    this.s2.remove("2");
-
-  }
 
 }

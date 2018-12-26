@@ -25,7 +25,7 @@ export class AppRoutingModule {
   logaRotas(pai: String, rotas: Routes) {
     for (let i = 0; i < rotas.length; i++) {
 
-      console.log("path:", pai, rotas[i].path, rotas[i].component ? rotas[i].component : "-->" + rotas[i].redirectTo);
+      //      console.log("path:", pai, rotas[i].path, rotas[i].component ? rotas[i].component : "-->" + rotas[i].redirectTo);
       if (rotas[i].children) {
         rotas[i].canActivate = [DreamFactoryGuard];
         this.logaRotas(rotas[i].path + "/", rotas[i].children);

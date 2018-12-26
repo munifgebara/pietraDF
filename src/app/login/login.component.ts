@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   loga() {
     this.loginService.login("pietra@munif.com.br", "qwe123").then(r => {
       if (r.ok) {
-        let purl = this.loginService.proximaUrl ? this.loginService.proximaUrl : "/principal";
+        let purl = this.loginService.proximaUrl ? this.loginService.proximaUrl : "/compromisso";
         this.router.navigate([purl]);
       }
       else {
