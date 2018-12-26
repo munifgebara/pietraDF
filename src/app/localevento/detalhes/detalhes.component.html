@@ -1,0 +1,18 @@
+
+<div *ngIf="!selecionado">
+  Carregando....
+</div>
+<div *ngIf="selecionado?.id">
+UF:<input type="text" name="UF" [(ngModel)]="selecionado.UF" />
+Bairro:<input type="text" name="bairro" [(ngModel)]="selecionado.bairro" />
+Cep:<input type="text" name="cep" [(ngModel)]="selecionado.cep" />
+Cidade:<input type="text" name="cidade" [(ngModel)]="selecionado.cidade" />
+Complemento:<input type="text" name="complemento" [(ngModel)]="selecionado.complemento" />
+Endereco:<input type="text" name="endereco" [(ngModel)]="selecionado.endereco" />
+Nome:<input type="text" name="nome" [(ngModel)]="selecionado.nome" />
+Telefone:<input type="text" name="telefone" [(ngModel)]="selecionado.telefone" />
+  <button (click)="save()">Salvar</button>
+  <button *ngIf="selecionado.id!='new'" (click)="delete()">Excluir</button>
+</div>
+<button (click)="cancel()">Cancelar</button>
+    

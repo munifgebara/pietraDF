@@ -1,0 +1,31 @@
+
+<div>
+  <input type="text" id="inPesquisa" name="pesquisa" placeholder="Pesquisa" [(ngModel)]="queryString" />
+  <button (click)="updateData()">Pesquisa</button>
+</div>
+
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+</tr>
+    </thead>
+    <tbody *ngIf="data">
+      <tr *ngFor="let d of data.resource">
+        <td> {{d.id}}</td>
+        <td> {{d.nome}}</td>
+        <td><button (click)="detail(d.id)">Edita</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <p *ngIf="data?.meta?.count">{{offset+1}}--{{offset+data.resource.length}} / {{data.meta.count}}</p>
+  <button *ngIf="offset>0" (click)="first()">First</button>
+  <button *ngIf="data?.meta?.next" (click)="next()">Next</button>
+  <button (click)="create()">Create</button>
+</div>
+    

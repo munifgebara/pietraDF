@@ -1,0 +1,11 @@
+
+<div *ngIf="!selecionado">
+  Carregando....
+</div>
+<div *ngIf="selecionado?.id">
+Nome:<input type="text" name="nome" [(ngModel)]="selecionado.nome" />
+  <button (click)="save()">Salvar</button>
+  <button *ngIf="selecionado.id!='new'" (click)="delete()">Excluir</button>
+</div>
+<button (click)="cancel()">Cancelar</button>
+    

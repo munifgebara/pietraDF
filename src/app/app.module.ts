@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CompromissoModule } from './compromisso/compromisso.module';
+import { GrupoDePessoasModule } from './grupodepessoas/grupodepessoas.module';
+import { LocalEventoModule } from './localevento/localevento.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CompromissoModule } from './compromisso/compromisso.module';
     HttpClientModule,
     FormsModule,
     DashboardModule,
-    CompromissoModule
+    CompromissoModule,
+    GrupoDePessoasModule,
+    LocalEventoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
