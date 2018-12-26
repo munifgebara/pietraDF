@@ -19,6 +19,8 @@ export class LoginService {
 
   public session: Dfsession;
 
+  public static API_KEY = "36fda24fe5588fa4285ac6c6c2fdfbdb6b6bc9834699774c9bf777f706d05a88";
+
   public baseUrl: string;
 
   constructor(protected http: HttpClient) {
@@ -40,16 +42,15 @@ export class LoginService {
         this.logado = true;
 
         return { ok: true };
-      })
-      .catch(this.errorHandler);
+      }).catch(this.errorHandler);
   }
 
   logout() {
     this.logado = false;
   }
 
-  errorHandler = error => {
-    return Promise.reject(error);
+  errorHandler(error: any) {
+    return Promise.reject({ error, ok: false });
   }
 
 }
