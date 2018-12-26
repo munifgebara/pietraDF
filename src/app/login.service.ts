@@ -15,7 +15,7 @@ export class LoginService {
 
   public logado = false;
 
-  public static BASE_URL = 'http://18.232.51.153/api/v2';
+  public static BASE_URL = 'https://18.232.51.153/api/v2';
 
   public session: Dfsession;
 
