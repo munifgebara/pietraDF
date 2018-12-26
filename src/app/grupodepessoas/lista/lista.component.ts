@@ -15,7 +15,7 @@ export class ListaComponent extends SuperLista<GrupoDePessoas> implements OnInit
 
 
   constructor(service: GrupoDePessoasService, router: Router, route: ActivatedRoute) {
-    super(service, router, route, "id");
+    super(service, router, route, "nome");
   }
 
 }
