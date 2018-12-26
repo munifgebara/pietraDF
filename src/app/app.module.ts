@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { CompromissoModule } from './compromisso/compromisso.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DashboardModule
+    DashboardModule,
+    CompromissoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
