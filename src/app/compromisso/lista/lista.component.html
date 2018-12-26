@@ -1,3 +1,28 @@
-<p>
-  lista works!
-</p>
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>ciente</th>
+        <th>quando</th>
+        <th>descricao</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="data">
+      <tr *ngFor="let d of data.resource">
+        <td> {{d.id}}</td>
+        <td> {{d.ciente}}</td>
+        <td> {{d.quando}}</td>
+        <td> {{d.descricao}}</td>
+        <td><button (click)="detail(d.id)">Edita</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <p *ngIf="data?.meta?.count">{{offset+1}}--{{offset+data.resource.length}} / {{data.meta.count}}</p>
+  <button *ngIf="offset>0" (click)="first()">First</button>
+  <button *ngIf="data?.meta?.next" (click)="next()">Next</button>
+  <button (click)="create()">Create</button>
+</div>

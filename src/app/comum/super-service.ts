@@ -28,7 +28,7 @@ export class SuperService<Tipo> {
         return headers;
     }
 
-    query(limit = 10, order = "id", filter = "", offset = 0): Promise<DFResponse<Tipo>> {
+    query(order = "id", offset = 0, limit = 10, filter = ""): Promise<DFResponse<Tipo>> {
 
         return this.http.get<DFResponse<Tipo>>(`${LoginService.BASE_URL}/pietra/_table/${this.colecao}?filter=${filter}&limit=${limit}&offset=${offset}&order=${order}&include_count=true`, { headers: this.createAuthorizationHeader() })
             .toPromise().then(response => {

@@ -1,3 +1,10 @@
-<p>
-  detalhes works!
-</p>
+<div *ngIf="!selecionado">
+  Carregando....
+</div>
+<div *ngIf="selecionado.id">
+  Descricao:<input type="text" name="descricao" [(ngModel)]="selecionado.descricao" />
+
+  <button (click)="save()">Salvar</button>
+  <button *ngIf="selecionado.id!='new'" (click)="delete()">Excluir</button>
+</div>
+<button (click)="cancel()">Cancelar</button>
