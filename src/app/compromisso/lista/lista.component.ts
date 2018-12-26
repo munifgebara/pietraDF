@@ -14,7 +14,7 @@ export class ListaComponent extends SuperLista<Compromisso> implements OnInit {
 
 
   constructor(service: ServiceService, router: Router, route: ActivatedRoute) {
-    super(service, router, route);
+    super(service, router, route, "descricao");
   }
 
 }

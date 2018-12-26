@@ -1,4 +1,9 @@
 <div>
+  <input type="text" id="inPesquisa" name="pesquisa" placeholder="Pesquisa" [(ngModel)]="queryString" />
+  <button (click)="updateData()">Pesquisa</button>
+</div>
+
+<div>
   <table border="1">
     <thead>
       <tr>

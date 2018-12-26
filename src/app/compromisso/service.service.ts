@@ -11,6 +11,8 @@ export class ServiceService extends SuperService<Compromisso>{
 
   constructor(http: HttpClient, loginService: LoginService) {
     super("Compromisso", http, loginService);
-
+  }
+  newObject(): Compromisso {
+    return { descricao: `Cat${Math.random()}` } as Compromisso;
   }
 }

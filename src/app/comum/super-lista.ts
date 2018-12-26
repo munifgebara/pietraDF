@@ -11,8 +11,10 @@ export class SuperLista<Tipo> implements OnInit {
     protected service: SuperService<Tipo>;
     protected router: Router;
     protected route: ActivatedRoute;
+    protected queryString: string = "%";
 
-    constructor(service: SuperService<Tipo>, router: Router, route: ActivatedRoute) {
+
+    constructor(service: SuperService<Tipo>, router: Router, route: ActivatedRoute, protected mainField: string) {
         this.service = service;
         this.router = router;
         this.route = route;
@@ -23,10 +25,14 @@ export class SuperLista<Tipo> implements OnInit {
     }
 
     updateData() {
-        this.service.query("id", this.offset).then(r => {
+
+        this.service.query(this.mainField, this.offset, 10, `${this.mainField} like '${this.queryString}'`).then(r => {
             this.data = r;
         });
     }
+
+
+
     first() {
         this.offset = 0;
         this.updateData();
