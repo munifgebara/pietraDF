@@ -5,13 +5,13 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 
 export class SuperLista<Tipo> implements OnInit {
 
-    protected offset = 0;
-    protected message = "listando";
-    protected data: DFResponse<Tipo>;
-    protected service: SuperService<Tipo>;
-    protected router: Router;
-    protected route: ActivatedRoute;
-    protected queryString: string = "%";
+    public offset = 0;
+    public message = "listando";
+    public data: DFResponse<Tipo>;
+    public service: SuperService<Tipo>;
+    public router: Router;
+    public route: ActivatedRoute;
+    public queryString: string = "%";
 
 
     constructor(service: SuperService<Tipo>, router: Router, route: ActivatedRoute, protected mainField: string) {

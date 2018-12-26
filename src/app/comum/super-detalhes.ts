@@ -4,11 +4,11 @@ import { DFResponse } from 'src/app/dfresponse.type';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 export class SuperDetalhes<Tipo> implements OnInit {
 
-    protected selecionado: Tipo;
-    protected id = "new";
-    protected service: SuperService<Tipo>;
-    protected router: Router;
-    protected route: ActivatedRoute;
+    public selecionado: Tipo;
+    public id = "new";
+    public service: SuperService<Tipo>;
+    public router: Router;
+    public route: ActivatedRoute;
     constructor(service: SuperService<Tipo>, router: Router, route: ActivatedRoute) {
         this.service = service;
         this.router = router;
