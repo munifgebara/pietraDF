@@ -1,7 +1,7 @@
 <div *ngIf="!selecionado">
   Carregando....
 </div>
-<div *ngIf="selecionado.id">
+<div *ngIf="selecionado?.id">
   Descricao:<input type="text" name="descricao" [(ngModel)]="selecionado.descricao" />
 
   <button (click)="save()">Salvar</button>
