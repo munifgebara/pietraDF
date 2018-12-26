@@ -19,7 +19,7 @@ export class DetalhesComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     if (this.id == "new") {
       this.selecionado = this.service.newObject();
-      this.selecionado.descricao = "abc";
+      this.selecionado.id = "new";
     }
     else {
       this.service.getOne(this.id).then(obj => {
