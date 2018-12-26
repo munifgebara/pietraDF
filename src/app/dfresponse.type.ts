@@ -5,5 +5,5 @@ export interface Meta {
 
 export interface DFResponse<Tipo> {
     resource: Tipo[];
-    meta: Meta;
+    meta?: Meta;
 }
